@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'onlinestudy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd4sfnpctm4049c',
-        'USER': 'vmbeqjjxmrdkbm',
-        'PASSWORD': '68740a49675b12bd28856a6e208fb95412b804c1fbf79cb9c2631223084c9037',
+        'NAME': 'db9b7sjduof4lg',
+        'USER': 'pukviexdexlyet',
+        'PASSWORD': 'aeb039a8f0911b53f3249bcaf5371e1132f3675474cb15bbf37adbbc55d15961',
         'HOST': 'ec2-23-21-192-179.compute-1.amazonaws.com',
         'PORT': '5432'
     
