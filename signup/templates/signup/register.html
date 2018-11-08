@@ -1,0 +1,206 @@
+
+{% load static %}
+  {% csrf_token %}
+<form method="POST" name="form" onsubmit="return checkForm(this);/>
+<div>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="fname"></input>
+  </div>
+  <div>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="lname"></input>
+  </div>
+  <div>
+    <label for="username">username:</label>
+    <input type="username" id="username" name="username"></input>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="txtpassword" name="pwd1"></input>
+  </div>
+   <div>
+    <label for="confirmpassword"> confirm Password: </label>
+    <input type="password" id="txtconfirmpassword" name="pwd2"> </input>
+  </div>
+<div>
+   <input id="terms" type="checkbox" name="terms" value="1"> I accept the <u>Terms and Conditions</u></p> <style="margin-bottom:15px">
+  </div>
+  <div>
+    <p>By creating an account you agree to our 
+   <a href="{% static 'files/termspolicy.pdf' %}"><style="color:dodgerblue">Terms & Privacy</a>.</p>
+    </div>
+
+      <div>
+         <input type="submit" value="Signup" id="btnsubmit"/>
+       <a href="/signin"><button type="button">cancel</button></a>
+  
+    </div>
+  </form>
+  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <style>
+ form label {
+  display: inline-block;
+  width: 100px;
+}
+ 
+form div {
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  margin-left: 5px;
+}
+ 
+label.error {
+  display: inline;
+}
+</style>
+  
+  <script>
+ $(document).ready(function() {
+ 
+  $("#btnsubmit").click(function(e) {
+    var first_name = $('#first_name').val();
+    var last_name = $('#last_name').val();
+    var username = $('#username').val();
+    var password = $('#txtpassword').val();
+    var confirmpassword=$('#txtconfirmpassword').val();
+    var terms=$('#terms').is(checked);
+  
+    $(".error").remove();
+ 
+    var errorarr = [];
+
+if(!terms){
+
+      $('#terms').after('<span class="error">This field is required</span>');
+      errorarr[6] = 1;
+  }
+  else
+  {
+    errorarr[6]=0;
+  }
+
+    if (first_name.length < 1) {
+      $('#first_name').after('<span class="error">This field is required</span>');
+      errorarr[0] = 1;
+    }
+    else{
+
+     errorarr[0] = 0; 
+    }
+
+
+
+    if (last_name.length < 1) {
+      $('#last_name').after('<span class="error">This field is required</span>');
+      errorarr[1] = 1;
+    }
+    else{
+      errorarr[1] = 0;
+    }
+
+
+    if (username < 1) {
+      $('#username').after('<span class="error">This field is required</span>');
+      errorarr[2] = 1;
+    } 
+    else{
+      errorarr[2] = 0;
+    }
+
+
+    if (password.length < 8) {
+      $('#txtpassword').after('<span class="error">Password must be at least 8 characters long</span>');
+      errorarr[3] = 1;
+    }
+    else{
+      errorarr[3] = 0;
+    }
+
+
+
+    if (confirmpassword.length < 8) {
+      $('#txtconfirmpassword').after('<span class="error">Password must be at least 8 characters long</span>');
+      errorarr[4] = 1;
+    }
+    else{
+      errorarr[4] = 0;
+    }
+   
+
+    var password = $("#txtpassword").val();
+    var confirmPassword = $("#txtconfirmpassword").val();
+    if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        errorarr[5] = 1;
+    }
+    else{
+      errorarr[5] = 0;
+    }
+     var res = errorarr.indexOf(1);
+    console.log(errorarr);
+
+    if(res == -1)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+   });
+});
+</script>
+<script>
+  $(document).ready(function(){
+  function checkForm(form)
+  {
+    re = /^\w+$/;
+    if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      if(form.pwd1.value.length < 8) {
+        alert("Error: Password must contain at least eight characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd1.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+
+    alert("You entered a valid password: " + form.pwd1.value);
+    return true;
+  }
+});
+</script>
+
+
+    
+ 
