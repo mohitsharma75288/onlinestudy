@@ -25,7 +25,7 @@ SECRET_KEY = 'g_6to8z_or+hz)^0n$ebor()ttovy0*sy(qlx25nx0ind@t+g%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'127.0.0.1', u'localhost', u'http://onlinapp.herokuapp.com/', u'https://onlinapp.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', 'http://onlinapp.herokuapp.com/', 'https://onlinapp.herokuapp.com/']
 
 
 # Application definition
