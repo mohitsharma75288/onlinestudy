@@ -25,7 +25,7 @@ SECRET_KEY = 'g_6to8z_or+hz)^0n$ebor()ttovy0*sy(qlx25nx0ind@t+g%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =  ['127.0.0.1', 'localhost', 'http://onlinapp.herokuapp.com/','https://onlinapp.herokuapp.com/']
+ALLOWED_HOSTS =  ['127.0.0.1', 'localhost', 'http://sessionwork.herokuapp.com/', 'https://sessionwork.herokuapp.com/']
 
 # Application definition
 
@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'onlinestudy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd4sfnpctm4049c',
-        'USER': 'vmbeqjjxmrdkbm',
-        'PASSWORD': '68740a49675b12bd28856a6e208fb95412b804c1fbf79cb9c2631223084c9037',
+        'NAME': 'd5b1ntnrteqdd2',
+        'USER': 'oqxzvfvzozgxmi',
+        'PASSWORD': '08d78fbae48566c9ed25c0e254446ac6419334bcba8ee8d66a072ad616b69581',
         'HOST': 'ec2-23-21-192-179.compute-1.amazonaws.com',
         'PORT': '5432'
     
