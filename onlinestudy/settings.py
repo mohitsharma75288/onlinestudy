@@ -25,7 +25,7 @@ SECRET_KEY = 'g_6to8z_or+hz)^0n$ebor()ttovy0*sy(qlx25nx0ind@t+g%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =  ['127.0.0.1', 'localhost', 'http://sessionwork.herokuapp.com/' 'https://sessionwork.herokuapp.com/']
+ALLOWED_HOSTS =  ['*', '127.0.0.1', 'localhost', 'http://sessionwork.herokuapp.com/' 'https://sessionwork.herokuapp.com/']
 
 # Application definition
 
