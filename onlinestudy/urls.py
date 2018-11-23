@@ -18,7 +18,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('home/', include('home.urls')),
+    url('', include('home.urls')),
     url('signin/', include('signin.urls')),
     url('signup/', include('signup.urls')),
 ]
