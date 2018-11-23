@@ -1,8 +1,8 @@
-from django.urls import path
-from . import views
+from django.conf.urls import url, include
+from signup import views
 urlpatterns=[
 
- path('', views.register, name='register'),
+ url('', views.register, name='register'),
  
 
 ]
